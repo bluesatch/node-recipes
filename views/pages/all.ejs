@@ -1,0 +1,48 @@
+<%- include('../partials/header'); %>
+
+<main class="main" id="allMain">
+    <div class="container">
+        <div class="row row-cols-1 row-cols-md-4 g-4">
+            <% data.forEach(item => { %>
+                <div class="col">
+                    <div class="card">
+                        <img 
+                            src="<%= item.photoUrl %>" 
+                            alt="image of <%= item.title %>"
+                            class="img-fluid card-img card-img-top recipe-img"
+                        />
+                        <div class="card-body">
+                            <h2 class="card-title card-heading"><%= item.title %></h2>
+                            <p class="card-text description"><%= item.description %></p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <%= item.course %>
+                            </li>
+                            <li class="list-group-item">
+                                <%= item.cuisine %>
+                            </li>
+                            <li class="list-group-item">
+                                Total Time: <%= item.totalTime %>
+                            </li>
+                            <li class="list-group-item">
+                                Servings: <%= item.servings %>
+                            </li>
+                        </ul>
+                        <div class="card-footer">
+                            <p class="card-tags">
+                                <%= item.tags %>
+                            </p>
+                            <p class="single-link-text text-capitalize">
+                                view recipe 
+                                <a href="/recipes/<%= item.id %>">here</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    </div>
+</main>
+
+<%- include('../partials/footer'); %>

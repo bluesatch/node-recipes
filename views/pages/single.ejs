@@ -1,0 +1,88 @@
+<%- include('../partials/header'); %>
+
+<main class="main" id="singleMain">
+    <section class="section section-1">
+        <div class="container">
+            <p class="description-single"><%- data.description %></p>
+            <div class="row">
+                <div class="col-md-6">
+                    <figure class="figure" id="recipeFigure">
+                        <img 
+                            src="<%= data.photoUrl %>" 
+                            alt="image of <%= data.title %>" 
+                            class="img-fluid recipe-single-img figure-img rounded" 
+                        />
+                        <figcaption class="figure-caption text-capitalize">
+                            <%= data.title %> | more info 
+                            <a 
+                                href="<%= data.source %>" 
+                                class="info-link"
+                                target="_blank">
+                                here
+                            </a>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="col-md-6">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item text-capitalize"><%= data.course %></li>
+                        <li class="list-group-item text-capitalize"><%= data.cuisine %></li>
+                        <li class="list-group-item text-capitalize">main ingredient: <%= data.mainIngredient %></li>
+                        <li class="list-group-item text-capitalize">prep time: <%= data.prepTime %> minutes</li>
+                        <li class="list-group-item text-capitalize">cook time: <%= data.cookTime %> minutes</li>
+                        <li class="list-group-item text-capitalize">total time: <%= data.totalTime %> minutes</li>
+                        <li class="list-group-item text-capitalize">servings: <%= data.servings %></li>
+                        <li class="list-group-item text-capitalize">rating <%= data.rating %></li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section section-2">
+        <div class="container">
+            <div class="ingredients-div">
+                <h2 class="h2-heading text-capitalize">ingredients</h2>
+                <p class="ingredients-text"><%= data.ingredients %></p>
+            </div>
+            <div class="directions-div">
+                <h2 class="h2-heading text-capitalize">directions</h2>
+                <p class="directions-text"><%= data.directions %></p>
+            </div>
+            <div class="nutrition-div">
+                <h2 class="h2-heading text-capitalize">nutritional data</h2>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item text-capitalize">
+                        nutritional score: <%= data.nutritionalScoreGeneric %>
+                    </li>
+                    <li class="list-group-item text-capitalize">
+                        calories: <%= data.calories %>
+                    </li>
+                    <li class="list-group-item text-capitalize">
+                        fat: <%= data.fat %>
+                    </li>
+                    <li class="list-group-item text-capitalize">
+                        cholesterol: <%= data.cholesterol %>
+                    </li>
+                    <li class="list-group-item text-capitalize">
+                        sodium: <%= data.sodium %>
+                    </li>
+                    <li class="list-group-item text-capitalize">
+                        sugar: <%= data.sugar %>
+                    </li>
+                    <li class="list-group-item text-capitalize">
+                        carbohydrates: <%= data.carbohydrate %>
+                    </li>
+                    <li class="list-group-item text-capitalize">
+                        fiber: <%= data.fiber %>
+                    </li>
+                    <li class="list-group-item text-capitalize">
+                        protein: <%= data.protein %>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</main>
+
+<%- include('../partials/footer'); %>
